@@ -1,0 +1,13 @@
+.circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.red {
+  background-image: radial-gradient(rgba(255, 0, 0, 0.6), rgba(255, 0, 0, 0.8), red);
+}
+
+.blue {
+  background-image: radial-gradient(rgba(0, 0, 255, 0.6), rgba(0, 0, 255, 0.8), blue);
+}
