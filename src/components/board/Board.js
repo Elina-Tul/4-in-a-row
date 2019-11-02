@@ -5,24 +5,26 @@ import './board.css';
 
 export default function Board({ matrixTable, onMatrixUpdate, winningCombination, winner }) {
 
-const drowBoard = (matrix) => {
-	let arr = [];
-	for (let i = 0; i < matrix.length; i++) {
-		let row = [];
-		for (let j = 0; j < matrix[i].length; j++) {
-			row.push(
-				<td
-					key={`td_${i}_${j}`}
-					className={winningCombination.includes(`${i}${j}`) ? `${winner}-wins` : ''}
-					onClick={() => { onMatrixUpdate(i, j) }
-				}>
-					{ matrix[i][j] === undefined ? "" : <Circle color={matrix[i][j]} /> }
-				</td>
-			);
-			}
-				arr.push(<tr key={`tr_${i}`}>{row}</tr>);
-			}
-		return arr;
+	const drowBoard = (matrix) => {
+		return matrix.map((row, rIndex) => {
+				return (
+					<tr key={`tr_${rIndex}`}>
+						{
+							row.map((col, cIndex) => {
+									return (
+										<td
+											key={`td_${rIndex}_${cIndex}`}
+											className={winningCombination.includes(`${rIndex}${cIndex}`) ? `${winner}-wins` : ''}
+											onClick={() => { onMatrixUpdate(rIndex, cIndex) }
+										}>
+											{ col === undefined ? "" : <Circle color={col} /> }
+										</td>
+									)
+							})
+						}
+					</tr>
+				)
+		})
 	}
 
 	return (
