@@ -5,7 +5,7 @@ import './board.css';
 
 export default function Board({ matrixTable, onMatrixUpdate, winningCombination, winner }) {
 
-	const drowBoard = (matrix) => {
+	const drawBoard = (matrix) => {
 		return matrix.map((row, rIndex) => {
 				return (
 					<tr key={`tr_${rIndex}`}>
@@ -30,13 +30,13 @@ export default function Board({ matrixTable, onMatrixUpdate, winningCombination,
 	return (
 		<table>
 			<tbody>
-				{drowBoard(matrixTable)}
+				{drawBoard(matrixTable)}
 			</tbody>
 		</table>
 	)
 }
 
-Board.proTotype = {
+Board.propTypes = {
 	matrixTable: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
 	winningCombination: PropTypes.arrayOf(PropTypes.string).isRequired,
 	onMatrixUpdate: PropTypes.func.isRequired,

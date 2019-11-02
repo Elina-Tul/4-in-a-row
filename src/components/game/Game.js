@@ -36,7 +36,7 @@ export default function Game() {
     const isNextPlayer = correctPlayerPosition(j, nextMatrix);
     if (isNextPlayer) {
       setMatrix(nextMatrix);
-      const currentWinner = checkWhoWins(nextMatrix);
+      const currentWinner = checkWhoWon(nextMatrix);
       if(currentWinner) {
         setWinModalOpen(true);
         setWinner(currentWinner);
@@ -62,7 +62,7 @@ export default function Game() {
     return flag;
   }
 
-  const checkWhoWins = (matrix) => {
+  const checkWhoWon = (matrix) => {
     for (let i = matrix.length - 1; i >= 0; i--) {
       for (let j = matrix[i].length - 1; j >= 0; j--) {
         if (!matrix[i][j]) {
