@@ -1,3 +1,9 @@
+## important:
+after cloning/downloading the project, make sure you ran "npm i" the first time.
+after the instalation of all the packages, you may use "npm start" to ran the project on localhost:3000.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
